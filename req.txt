@@ -1,6 +1,0 @@
-asgiref
-Django
-Pillow
-pytz
-sqlparse
-gunicorn

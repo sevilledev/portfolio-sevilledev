@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+asgiref = "*"
+pytz = "*"
+sqlparse = "*"
+Django = "*"
+Pillow = "*"
+
+[dev-packages]
+pytest = "*"
+gunicorn = "*"
+
+[requires]
+python_version = "3.8"
