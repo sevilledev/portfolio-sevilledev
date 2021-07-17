@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% block links %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<link rel="stylesheet" href="{% static 'css/resume.css' %}">
+{% endblock links %}
+
+
+{% block content %}
+<!-- Content Start -->
+<main>
+    <div class="content">
+        <section id="resume">
+            <div class="blog resume-div" style="color: white;">
+                <div class="resume">
+                    <div class="title">
+                        <h1>RESUME</h1>
+                        <span>RESUME</span>
+                    </div>
+                    <div class="resume-container">
+                        <div class="resume-title">
+                            <span>
+                                <i class="fas fa-user-graduate"></i>
+                            </span>
+                            <h1>Education Experience</h1>
+                        </div>
+
+                        <div class="resume-inner">
+                            {% for edu in edu_exps %}
+                            <div class="work">
+                                <div class="date">{{edu.timedelta}}</div>
+                                <div class="info">
+                                    <h5>{{edu.specialty}}</h5>
+                                    <p class="place">{{edu.place}}</p>
+                                    <p class="text">{{edu.description}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+            </div>
+
+
+                <div class="resume">
+                    <div class="resume-container">
+                        <div class="resume-title">
+                            <span>
+                                <i class="fas fa-briefcase"></i>
+                            </span>
+                            <h1>Work Experience</h1>
+                        </div>
+
+                        <div class="resume-inner">
+                            {% for work in work_exps %}
+                            <div class="work">
+                                <div class="date">{{work.timedelta}}</div>
+                                <div class="info">
+                                    <h5>{{work.specialty}}</h5>
+                                    <p class="place">{{work.place}}</p>
+                                    <p class="text">{{work.description}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<!-- Content End -->
+{% endblock content %}

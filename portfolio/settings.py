@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-_^z4q2_ztc*6+%83axa&y)^9k^k3kr%$s8j&ek+)m_yb_@dnyy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['portfoliosevilledev.herokuapp.com']
+ALLOWED_HOSTS = ['portfoliosevilledev.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'projects',
     'blog',
     'contact',
+    'jet.dashboard',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -10,6 +10,8 @@ pytz = "*"
 sqlparse = "*"
 Django = "*"
 Pillow = "*"
+google-api-python-client = "==1.4.1"
+django-3-jet = "*"
 
 [dev-packages]
 pytest = "*"
