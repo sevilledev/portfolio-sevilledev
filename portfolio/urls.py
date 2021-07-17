@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('resume/', include('resume.urls'))
+    path('resume/', include('resume.urls')),
+    path('contact/', include('contact.urls'))
 ]
 

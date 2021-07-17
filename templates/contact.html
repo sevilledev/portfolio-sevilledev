@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block links %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock links %}
+
+
+{% block content %}
+<!-- Content Start -->
+<main>
+    <div class="content">
+        <section id="contact">
+            <div class="contact">
+                <div class="title">
+                    <h1>CONTACT ME</h1>
+                    <span>CONTACT ME</span>
+                </div>
+
+                <div class="contact-content">
+
+                    <div class="form">
+                        <div class="form-title">Get In Touch</div>
+                        <form method="POST">{% csrf_token %}
+                            <div class="form-input">
+                                <label for="">Enter your name*</label>
+                                <!-- <input type="text"> -->
+                                {{form.name}}
+                            </div>
+                            <div class="form-input">
+                                <label for="">Enter your email*</label>
+                                {{form.email}}
+                                <!-- <input type="email"> -->
+                            </div>
+                            <div class="form-input">
+                                <label for="">Enter your message*</label>
+                                <!-- <textarea name="" id="" cols="30" rows="6"></textarea> -->
+                                {{form.message}}
+                            </div>
+
+                            <div class="form-input">
+                                <button type="submit">SEND MAIL</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<!-- Content End -->
+{% endblock content %}

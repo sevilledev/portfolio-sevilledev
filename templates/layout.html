@@ -66,8 +66,17 @@
                     <a href="{% url 'resume' %}" class="{{resume_page}}"><li class="{{resume_page}}">Resume</li></a>
                     <a href="" class="{{portfolio_page}}"><li class="{{portfolio_page}}">Projects</li></a>
                     <a href="" class="{{blog_page}}"><li class="{{blog_page}}">Blog</li></a>
-                    <a href="" class="{{contact_page}}" ><li class="{{contact_page}}">Contact</li></a>
+                    <a href="{% url 'contact' %}" class="{{contact_page}}" ><li class="{{contact_page}}">Contact</li></a>
                 </ul>
+                    {% comment %} <div class="info">
+                        <div class="info-box">
+                            <div class="icon"><i class="far fa-envelope"></i></div>
+                            <div class="text">
+                                <h5>Email</h5>
+                                <span>sevillerasulova@gmail.com</span>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
             </div>
 
             <div class="copy-right">
