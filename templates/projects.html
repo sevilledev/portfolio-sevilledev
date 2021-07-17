@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block links %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+{% endblock links %}
+
+
+{% block content %}
+<!-- Content Start -->
+<main>
+    <div class="content">
+        <section id="portfolio">
+            <div class="blog portfolio">
+                <div class="title">
+                    <h1>PORTFOLIO</h1>
+                    <span>PORTFOLIO</span>
+                </div>
+
+                <div class="portfolio-container">
+                    {% for project in projects %}
+                    <div class="portfolio-box">
+                        <div class="p-title">
+                            <img src="{{project.image.url}}" alt="">
+                            <a href="{{project.link}}">
+                                <h1>{{project.name}}</h1>
+                            </a>
+                            <p>{{project.short_desc}}</p>
+                        </div>  
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<!-- Content End -->
+{% endblock content %}

@@ -14,10 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from typing import Pattern
+from django.conf import settings
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     url(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
@@ -25,6 +28,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('resume/', include('resume.urls')),
-    path('contact/', include('contact.urls'))
+    path('projects/', include('projects.urls')),
+    path('contact/', include('contact.urls')),
 ]
 
+
+if settings.DEBUG:
+    urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
